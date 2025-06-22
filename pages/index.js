@@ -1,13 +1,15 @@
 import Link from 'next/link';
 import posts from '../data/posts';
+import Layout from '../components/Layout';
 
-export default function Home() {
+export async function getStaticProps() {
+  return { props: { posts } };
+}
+
+export default function Home({ posts }) {
   return (
-    <div className="container">
+    <Layout>
       <h1>Modern Blog</h1>
-      <nav>
-        <Link href="/">Home</Link>
-      </nav>
       {posts.map(post => (
         <div key={post.id}>
           <h2>
@@ -16,6 +18,6 @@ export default function Home() {
           <p>{post.excerpt}</p>
         </div>
       ))}
-    </div>
+    </Layout>
   );
 }

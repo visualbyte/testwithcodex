@@ -1,6 +1,8 @@
 # Modern Blog
 
 This repository contains a simple blog built with [Next.js](https://nextjs.org/).
+It uses static generation to render posts defined in `data/posts.js` and includes
+basic navigation with a reusable layout component.
 
 ## Getting Started
 
@@ -26,7 +28,8 @@ This repository contains a simple blog built with [Next.js](https://nextjs.org/)
 
 ## Project Structure
 
-- `pages/` – Next.js pages for listing posts and showing individual posts.
+- `pages/` – Next.js pages, including a custom 404 page.
+- `components/Layout.js` – Shared layout component with a header and navigation.
 - `data/posts.js` – Example post data.
 - `styles/` – Global styles.
 

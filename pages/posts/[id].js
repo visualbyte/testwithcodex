@@ -1,22 +1,22 @@
-import { useRouter } from 'next/router';
-import Link from 'next/link';
-import posts from '../../data/posts';
 import ReactMarkdown from 'react-markdown';
+import posts from '../../data/posts';
+import Layout from '../../components/Layout';
 
-export default function Post() {
-  const router = useRouter();
-  const { id } = router.query;
-  const post = posts.find(p => p.id === id);
+export async function getStaticPaths() {
+  const paths = posts.map(post => ({ params: { id: post.id } }));
+  return { paths, fallback: false };
+}
 
-  if (!post) return <p>Loading...</p>;
+export async function getStaticProps({ params }) {
+  const post = posts.find(p => p.id === params.id);
+  return { props: { post } };
+}
 
+export default function Post({ post }) {
   return (
-    <div className="container">
+    <Layout>
       <h1>{post.title}</h1>
-      <nav>
-        <Link href="/">Home</Link>
-      </nav>
       <ReactMarkdown>{post.content}</ReactMarkdown>
-    </div>
+    </Layout>
   );
 }
