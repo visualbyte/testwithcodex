@@ -18,6 +18,12 @@ This repository contains a simple blog built with [Next.js](https://nextjs.org/)
 
 3. Open [http://localhost:3000](http://localhost:3000) to view the blog.
 
+4. Run tests:
+
+   ```bash
+   npm test
+   ```
+
 ## Project Structure
 
 - `pages/` – Next.js pages for listing posts and showing individual posts.
