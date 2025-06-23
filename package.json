@@ -1,0 +1,16 @@
+{
+  "name": "modern-blog",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "node test.js",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-markdown": "latest"
+  }
+}
