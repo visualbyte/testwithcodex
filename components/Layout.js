@@ -22,7 +22,11 @@ export default function Layout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Nav />
-      <button onClick={() => setDark(!dark)} aria-label="toggle-dark">
+      <button
+        onClick={() => setDark(!dark)}
+        aria-label="toggle-dark"
+        className="theme-toggle"
+      >
         {dark ? 'Light' : 'Dark'} Mode
       </button>
       {children}
