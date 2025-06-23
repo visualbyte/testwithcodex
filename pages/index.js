@@ -23,14 +23,15 @@ export default function Home({ posts }) {
 
   return (
     <Layout>
-      <h1>Modern Blog</h1>
+      <h1 className="text-2xl font-bold mb-4">Modern Blog</h1>
       <input
+        className="border p-2 w-full mb-4"
         type="text"
         placeholder="Search"
         value={query}
         onChange={e => setQuery(e.target.value)}
       />
-      <select value={tag} onChange={e => setTag(e.target.value)}>
+      <select className="border p-2 mb-4" value={tag} onChange={e => setTag(e.target.value)}>
         <option value="">All</option>
         {allTags.map(t => (
           <option key={t} value={t}>{t}</option>

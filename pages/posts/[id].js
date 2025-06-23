@@ -28,9 +28,11 @@ export default function Post({ post }) {
 
   return (
     <Layout>
-      <h1>{post.title}</h1>
+      <h1 className="text-2xl font-bold mb-4">{post.title}</h1>
       <LikeButton postId={post.id} />
-      <ReactMarkdown>{post.content}</ReactMarkdown>
+      <article className="prose dark:prose-invert">
+        <ReactMarkdown>{post.content}</ReactMarkdown>
+      </article>
       <div id="disqus_thread" />
     </Layout>
   );
