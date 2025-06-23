@@ -1,7 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const postsDir = path.join(__dirname, '..', 'posts');
+// Use process.cwd() to get the project root directory
+const postsDir = path.join(process.cwd(), 'posts');
 
 function parsePost(content) {
   const match = /^---\n([\s\S]*?)\n---\n([\s\S]*)$/m.exec(content);
