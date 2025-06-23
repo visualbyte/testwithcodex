@@ -16,7 +16,11 @@ export default function LikeButton({ postId }) {
   };
 
   return (
-    <button onClick={handleLike} aria-label="like">
+    <button
+      onClick={handleLike}
+      aria-label="like"
+      className="mb-4 rounded border px-3 py-1 hover:bg-gray-100 dark:hover:bg-gray-700"
+    >
       ❤️ {likes}
     </button>
   );

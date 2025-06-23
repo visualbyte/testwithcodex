@@ -1,76 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
-  font-family: Georgia, 'Times New Roman', serif;
-  margin: 0;
-  padding: 0;
-  background: #fafafa;
-  color: #444;
-  transition: background 0.3s ease, color 0.3s ease;
+  @apply font-serif m-0 p-0 bg-gray-50 text-gray-700 transition-colors duration-300;
 }
 
 body.dark {
-  background: #121212;
-  color: #eee;
-}
-
-.container {
-  max-width: 850px;
-  margin: 0 auto;
-  padding: 2rem;
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-body.dark .container {
-  background: #333;
-}
-
-nav a {
-  margin-right: 1rem;
-  color: #0070f3;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-nav a:hover {
-  color: #0051a3;
-}
-
-.post-card {
-  border: 1px solid #ddd;
-  background: #fff;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 4px;
-}
-
-body.dark .post-card {
-  background: #444;
-  border-color: #555;
-}
-
-.tags {
-  font-size: 0.8rem;
-  color: #666;
-  font-family: monospace;
-}
-
-.theme-toggle {
-  margin-bottom: 1rem;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
-
-.theme-toggle:hover {
-  background: rgba(0, 0, 0, 0.05);
-}
-
-@media (max-width: 600px) {
-  .container {
-    padding: 1rem;
-  }
+  @apply bg-gray-900 text-gray-100;
 }
 
 h1 {
-  margin-top: 0;
+  @apply mt-0;
 }

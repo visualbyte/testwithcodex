@@ -16,7 +16,7 @@ export default function Layout({ children }) {
   }, [dark]);
 
   return (
-    <div className="container">
+    <div className="container mx-auto max-w-2xl p-8 bg-white dark:bg-gray-800 shadow-md">
       <Head>
         <title>Modern Blog</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -25,7 +25,7 @@ export default function Layout({ children }) {
       <button
         onClick={() => setDark(!dark)}
         aria-label="toggle-dark"
-        className="theme-toggle"
+        className="mb-4 px-4 py-2 border rounded hover:bg-gray-100 dark:hover:bg-gray-700"
       >
         {dark ? 'Light' : 'Dark'} Mode
       </button>

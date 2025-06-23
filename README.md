@@ -1,8 +1,8 @@
 # Modern Blog
 
 This repository contains a simple blog built with [Next.js](https://nextjs.org/).
-It uses static generation to render posts defined in `data/posts.js` and includes
-basic navigation with a reusable layout component.
+Styling is provided by [Tailwind CSS](https://tailwindcss.com/).
+The blog uses static generation to render posts defined in `data/posts.js` and includes basic navigation with a reusable layout component.
 
 ## Getting Started
 
@@ -11,6 +11,7 @@ basic navigation with a reusable layout component.
    ```bash
    npm install
    ```
+   This will install Tailwind CSS along with other packages.
 
 2. Start the development server:
 
