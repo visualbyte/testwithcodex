@@ -7,6 +7,11 @@ body {
   color: #333;
 }
 
+body.dark {
+  background: #222;
+  color: #eee;
+}
+
 .container {
   max-width: 800px;
   margin: 0 auto;
@@ -14,10 +19,24 @@ body {
   background: #fff;
 }
 
+body.dark .container {
+  background: #333;
+}
+
 nav a {
   margin-right: 1rem;
   color: #0070f3;
   text-decoration: none;
+}
+
+.post-card {
+  border-bottom: 1px solid #ccc;
+  padding: 1rem 0;
+}
+
+.tags {
+  font-size: 0.8rem;
+  color: #666;
 }
 
 h1 {
