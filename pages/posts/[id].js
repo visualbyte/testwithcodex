@@ -30,7 +30,9 @@ export default function Post({ post }) {
     <Layout>
       <h1 className="text-2xl font-bold mb-4">{post.title}</h1>
       <LikeButton postId={post.id} />
-      <ReactMarkdown className="prose dark:prose-invert" >{post.content}</ReactMarkdown>
+      <article className="prose dark:prose-invert">
+        <ReactMarkdown>{post.content}</ReactMarkdown>
+      </article>
       <div id="disqus_thread" />
     </Layout>
   );
