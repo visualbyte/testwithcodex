@@ -1,10 +1,10 @@
 ---
 id: third
 title: Another post
-excerpt: testing.
+excerpt: testing
 tags: intro, nextjs
 ---
 
-# Welcome
+# Another Post
 
 This is the first post on our modern blog. Stay tuned for more content!
