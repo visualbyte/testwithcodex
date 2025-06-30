@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import postsData from '../data/posts';
+import { getPosts } from '../data/posts';
 import Layout from '../components/Layout';
 import PostCard from '../components/PostCard';
 
-export async function getStaticProps() {
-  return { props: { posts: postsData } };
+export async function getServerSideProps() {
+  const posts = getPosts();
+  return { props: { posts } };
 }
 
 export default function Home({ posts }) {

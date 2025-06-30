@@ -1,16 +1,15 @@
 import ReactMarkdown from 'react-markdown';
-import posts from '../../data/posts';
+import { getPosts } from '../../data/posts';
 import Layout from '../../components/Layout';
 import LikeButton from '../../components/LikeButton';
 import { useEffect } from 'react';
 
-export async function getStaticPaths() {
-  const paths = posts.map(post => ({ params: { id: post.id } }));
-  return { paths, fallback: false };
-}
-
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
+  const posts = getPosts();
   const post = posts.find(p => p.id === params.id);
+  if (!post) {
+    return { notFound: true };
+  }
   return { props: { post } };
 }
 

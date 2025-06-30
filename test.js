@@ -1,5 +1,6 @@
 const assert = require('assert');
-const posts = require('./data/posts');
+const { getPosts } = require('./data/posts');
+const posts = getPosts();
 
 assert(Array.isArray(posts), 'posts should be an array');
 assert(posts.length > 0, 'posts should not be empty');

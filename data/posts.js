@@ -18,20 +18,24 @@ function parsePost(content) {
   return { ...meta, content };
 }
 
-const posts = fs.readdirSync(postsDir)
-  .filter(f => f.endsWith('.md'))
-  .map(filename => {
-    const file = fs.readFileSync(path.join(postsDir, filename), 'utf8');
-    const data = parsePost(file);
-    const id = data.id || filename.replace(/\.md$/, '');
-    const tags = data.tags ? data.tags.split(',').map(t => t.trim()) : [];
-    return {
-      id,
-      title: data.title || id,
-      excerpt: data.excerpt || '',
-      content: data.content || '',
-      tags,
-    };
-  });
+function getPosts() {
+  return fs.readdirSync(postsDir)
+    .filter(f => f.endsWith('.md'))
+    .map(filename => {
+      const file = fs.readFileSync(path.join(postsDir, filename), 'utf8');
+      const data = parsePost(file);
+      const id = data.id || filename.replace(/\.md$/, '');
+      const tags = data.tags ? data.tags.split(',').map(t => t.trim()) : [];
+      return {
+        id,
+        title: data.title || id,
+        excerpt: data.excerpt || '',
+        content: data.content || '',
+        tags,
+      };
+    });
+}
 
-module.exports = posts;
+module.exports = {
+  getPosts,
+};
