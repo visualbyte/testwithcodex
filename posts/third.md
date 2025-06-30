@@ -1,5 +1,5 @@
 ---
-id: welcome
+id: third
 title: Welcome to the Blog
 excerpt: Introducing our new modern blog built with Next.js.
 tags: intro, nextjs
